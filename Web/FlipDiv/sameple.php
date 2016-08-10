@@ -12,6 +12,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
 
 
+<script>
+
+    $(function(){
+
+        $("#login-text").click(function (e){
+            var cards = document.querySelectorAll(".card.effect__click");
+            var c = cards[0].classList;
+            c.contains("flipped") === true ? c.remove("flipped") : c.add("flipped");
+        });
+
+        $("#signup-text").click(function (e){
+            var cards = document.querySelectorAll(".card.effect__click");
+            var c = cards[0].classList;
+            c.contains("flipped") === true ? c.remove("flipped") : c.add("flipped");
+        });
+
+    });
+
+</script>
 <link rel="stylesheet" href="css/style.css">
 
 <div class="wrapper" id="wrapper">
