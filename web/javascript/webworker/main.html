@@ -1,0 +1,36 @@
+<!-- reference : http://www.w3schools.com/html/html5_webworkers.asp -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Count numbers: <output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+<br><br>
+
+<script>
+var w;
+
+function startWorker() {
+    <!-- check the browser if it supports -->
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("demo_workers.js");
+        }
+       //Event listener
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+    }
+}
+
+function stopWorker() {
+    w.terminate();
+    w = undefined;
+}
+</script>
+
+</body>
+</html>

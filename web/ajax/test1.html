@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- draggable import -->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $('#test1').on("click",function(e){
+                e.preventDefault(); // cancel click
+                var page = "test2.html";
+                $('html').load(page);
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="test1"><h1>This is Test1</h1></div>
+</body>
+</html>
