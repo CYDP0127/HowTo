@@ -2,21 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>test1</title>
     <!-- draggable import -->
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="../../jquery/jquery-3.1.1.js"></script>
     <script>
         $(function(){
             $('#test1').on("click",function(e){
-                e.preventDefault(); // cancel click
+              /*  e.preventDefault(); //    cancel click
                 var page = "test2.html";
-                $('html').load(page);
+                $('body').load(page);*/
+
+                $.ajax({
+                    url: "test2.html",
+                    success: function (data){
+                        var a = $(data).filter("#test2").html();
+                        console.log(a);
+                      //  $('#body').html($(data).find("#test2").html());
+                        // hide ajax loader
+                        //   $('.ajax-loader').hide();
+                    }
+                });
             });
         });
     </script>
 </head>
-<body>
+<body id="body">
 
 <div id="test1"><h1>This is Test1</h1></div>
 </body>

@@ -4,4 +4,19 @@ if(isset($_POST)){
 }
 
 var_dump($_POST);
+
+
+a(1);
+
+
+function a($b){
+    if($b == 2){
+        $c = "1";
+    }else{
+        $c = "2";
+    }
+
+    echo $c;
+}
+
 ?>

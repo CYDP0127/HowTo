@@ -2,11 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>test2</title>
+    <script src="../../jquery/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            $('#test2').on("click",function(e){
+                /*  e.preventDefault(); // cancel click
+                 var page = "test2.html";
+                 $('body').load(page);*/
 
+                $.ajax({
+                    url: "test1.html",
+                    success: function (data){
+                        //   console.log(data);
+                        $('body').html(data);
+                        // hide ajax loader
+                        //   $('.ajax-loader').hide();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body id="body">
+<div>asdasd</div>
+<div>asdasd</div>
+<div>asdasd</div>
+<div>asdasd</div>
+<div>asdasd</div>
+<div>asdasd</div>
+<div>asdasd</div>
 <div id="test2"><h1>this is test2</h1></div>
 
+<div id="a">aaaaa</div>
 </body>
 </html>
